@@ -43,10 +43,11 @@ Microsoft.ZuneVideo
 
 ### Описание функций
 
-- **Is-WingetInstalled**: Проверяет, установлен ли `winget`.
+- **Test-WingetInstalled**: Проверяет, установлен ли `winget`.
 - **Install-Winget**: Устанавливает `winget`, если он не установлен.
 - **Install-Apps**: Устанавливает приложения, указанные в файле `install_list.txt`.
 - **Uninstall-Apps**: Удаляет приложения, указанные в файле `uninstall_list.txt`.
+- **Workspace setup**: В разделе задаются дополнительные параметры системы.
 
 ### Пример использования
 1. Создайте файл `install_list.txt` с содержимым:
