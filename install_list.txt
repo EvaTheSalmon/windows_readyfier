@@ -3,3 +3,4 @@ Notepad++.Notepad++
 Apache.OpenOffice
 Mozilla.Firefox
 Microsoft.VisualStudioCode
+AnyDeskSoftwareGmbH.AnyDesk

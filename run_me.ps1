@@ -2,7 +2,7 @@
 $uninstallListPath = "uninstall_list.txt"
 $installListPath = "install_list.txt"
 
-function Is-WingetInstalled {
+function Test-WingetInstalled {
     try {
         Get-Command winget -ErrorAction Stop
         Write-Output "Winget is already installed"
@@ -20,7 +20,7 @@ function Install-Winget {
 
     try {
         Start-Process ms-windows-store -ArgumentList "AppLink=$appInstallerUrl" -Wait
-        if (Is-WingetInstalled) {
+        if (Test-WingetInstalled) {
             Write-Output "Winget installation was successful"
         } else {
             Write-Output "Winget installation failed"
@@ -61,7 +61,7 @@ function Uninstall-Apps {
                 Write-Output "$app uninstalled successfully"
             }
             catch {
-                Write-Output "Failed to uninstall $app: $_"
+                Write-Output "Failed to uninstall $($app): $_"
             }
         }
     } else {
@@ -71,12 +71,16 @@ function Uninstall-Apps {
 }
 
 Write-Output "Checking for winget availability..."
-if (-not (Is-WingetInstalled)) {
+if (-not (Test-WingetInstalled)) {
     Install-Winget
 }
 
 Install-Apps -installListPath $installListPath
 Uninstall-Apps -uninstallListPath $uninstallListPath
+
+# Workspace setup
+powercfg -h off                         # Hibernation off
+powercfg /change monitor-timeout-ac 0   # LCD always on 
 
 Write-Host "Press any key to continue..."
 $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

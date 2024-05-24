@@ -27,3 +27,4 @@ Microsoft.XboxApp_8wekyb3d8bbwe
 Microsoft.ZuneMusic_8wekyb3d8bbwe
 Microsoft.OneDrive
 microsoft.windowscommunicationsapps_8wekyb3d8bbwe
+Microsoft.Todos_8wekyb3d8bbwe
