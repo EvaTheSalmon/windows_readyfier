@@ -1,0 +1,3 @@
+[submodule "winget-install"]
+	path = winget-install
+	url = https://github.com/asheroto/winget-install

@@ -2,32 +2,18 @@
 $uninstallListPath = "uninstall_list.txt"
 $installListPath = "install_list.txt"
 
-function Test-WingetInstalled {
-    try {
-        Get-Command winget -ErrorAction Stop
-        Write-Output "Winget is already installed"
-        return $true
-    }
-    catch {
-        Write-Output "Winget is not installed"
-        return $false
-    }
-}
-
 function Install-Winget {
     Write-Output "Installing winget..."
-    $appInstallerUrl = "https://aka.ms/getwinget"
-
+    
     try {
-        Start-Process ms-windows-store -ArgumentList "AppLink=$appInstallerUrl" -Wait
-        if (Test-WingetInstalled) {
-            Write-Output "Winget installation was successful"
-        } else {
-            Write-Output "Winget installation failed"
-        }
+        $scriptPath = "$PSScriptRoot/winget-install/winget-install.ps1"
+        & $scriptPath
     }
     catch {
         Write-Error "An error occurred while trying to install winget: $_"
+        Write-Host "Press any key to exit..."
+        $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        exit 0
     }
 }
 
@@ -36,8 +22,8 @@ function Install-Apps {
         [string]$installListPath
     )
     
-    if (Test-Path $installListPath) {
-        $apps = Get-Content $installListPath
+    if (Test-Path -Path $installListPath) {
+        $apps = Get-Content -Path $installListPath
         foreach ($app in $apps) {
             Write-Output "Installing $app..."
             winget install --id $app --silent --accept-package-agreements --accept-source-agreements
@@ -52,12 +38,12 @@ function Uninstall-Apps {
         [string]$uninstallListPath
     )
     
-    if (Test-Path $uninstallListPath) {
-        $appList = Get-Content $uninstallListPath
-        foreach ($app in $appList) {
+    if (Test-Path -Path $uninstallListPath) {
+        $apps = Get-Content -Path $uninstallListPath
+        foreach ($app in $apps) {
             Write-Output "Uninstalling $app..."
             try {
-                winget uninstall $app
+                winget uninstall --id $app --silent --accept-package-agreements --accept-source-agreements
                 Write-Output "$app uninstalled successfully"
             }
             catch {
@@ -65,23 +51,33 @@ function Uninstall-Apps {
             }
         }
     } else {
-        Write-Output "File $uninstallListPath not found"
+        Write-Output "The file $uninstallListPath does not exist."
         exit 1
     }
 }
 
-Write-Output "Checking for winget availability..."
-if (-not (Test-WingetInstalled)) {
-    Install-Winget
+function Test-IsAdministrator {
+    $currentUser = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+    return $currentUser.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 }
+
+if (-not (Test-IsAdministrator)) {
+    Write-Warning "This script is not running as Administrator. Restart it as Administrator"
+    Write-Host "Press any key to exit..."
+    $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    exit 0
+}
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+
+Install-Winget
 
 Install-Apps -installListPath $installListPath
 Uninstall-Apps -uninstallListPath $uninstallListPath
 
-# Workspace setup
 powercfg -h off                         # Hibernation off
-powercfg /change monitor-timeout-ac 0   # LCD always on 
+powercfg /change monitor-timeout-ac 0   # LCD always on
 
-Write-Host "Press any key to continue..."
+Write-Host "Press any key to exit..."
 $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 exit 0
