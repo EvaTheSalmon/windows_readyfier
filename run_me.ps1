@@ -75,8 +75,10 @@ Install-Winget
 Install-Apps -installListPath $installListPath
 Uninstall-Apps -uninstallListPath $uninstallListPath
 
-powercfg -h off                         # Hibernation off
-powercfg /change monitor-timeout-ac 0   # LCD always on
+Powercfg /Change monitor-timeout-ac 0   # LCD always on
+Powercfg /Change monitor-timeout-dc 0
+Powercfg /Change standby-timeout-ac 0   # PC never sleep
+Powercfg /Change standby-timeout-dc 0
 
 Write-Host "Press any key to exit..."
 $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
