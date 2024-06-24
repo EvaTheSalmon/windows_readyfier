@@ -7,11 +7,11 @@ function Install-Winget {
     
     try {
         $scriptPath = "$PSScriptRoot/winget-install/winget-install.ps1"
-        Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs -Wait -PassThru
+        & $scriptPath
     }
     catch {
         Write-Error "An error occurred while trying to install winget: $_"
-        Write-Host "Press any key to continue..."
+        Write-Host "Press any key to exit..."
         $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         exit 0
     }
@@ -62,10 +62,10 @@ function Test-IsAdministrator {
 }
 
 if (-not (Test-IsAdministrator)) {
-    Write-Warning "This script is not running as Administrator. It will now restart with elevated permissions."
-    $newProcess = Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs -PassThru
-    $newProcess.WaitForExit()
-    exit
+    Write-Warning "This script is not running as Administrator. Restart it as Administrator"
+    Write-Host "Press any key to exit..."
+    $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    exit 0
 }
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
@@ -78,6 +78,6 @@ Uninstall-Apps -uninstallListPath $uninstallListPath
 powercfg -h off                         # Hibernation off
 powercfg /change monitor-timeout-ac 0   # LCD always on
 
-Write-Host "Press any key to continue..."
+Write-Host "Press any key to exit..."
 $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 exit 0
