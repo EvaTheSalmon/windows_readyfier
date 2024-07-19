@@ -42,13 +42,7 @@ function Uninstall-Apps {
         $apps = Get-Content -Path $uninstallListPath
         foreach ($app in $apps) {
             Write-Output "Uninstalling $app..."
-            try {
-                winget uninstall --id $app --silent --accept-package-agreements --accept-source-agreements
-                Write-Output "$app uninstalled successfully"
-            }
-            catch {
-                Write-Output "Failed to uninstall $($app): $_"
-            }
+            winget remove $app --silent
         }
     } else {
         Write-Output "The file $uninstallListPath does not exist."

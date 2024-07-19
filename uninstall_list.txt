@@ -28,3 +28,8 @@ Microsoft.ZuneMusic_8wekyb3d8bbwe
 Microsoft.OneDrive
 microsoft.windowscommunicationsapps_8wekyb3d8bbwe
 Microsoft.Todos_8wekyb3d8bbwe
+ARP\Machine\X64\{16A15A77-242A-412C-86EF-C4D58BD80ED0}
+ARP\Machine\X64\{89581302-705F-42C5-99B0-E368A845DAD5}
+MSIX\A025C540.Yandex.Music_4.54.8517.0_x64__vfvw9svesycw6
+MSIX\AD2F1837.HPPrinterControl_154.2.1075.0_x64__v10z8vjag6ke6
+MSIX\Microsoft.StorePurchaseApp_22403.1401.1.0_x64__8wekyb3d8bbwe
