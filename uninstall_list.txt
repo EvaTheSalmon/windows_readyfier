@@ -1,35 +1,33 @@
-Microsoft.549981C3F5F10_8wekyb3d8bbwe
-Microsoft.Wallet_8wekyb3d8bbwe
-Microsoft.Xbox.TCUI_8wekyb3d8bbwe
-Microsoft.XboxGameOverlay_8wekyb3d8bbwe
-Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
-Microsoft.XboxIdentityProvider_8wekyb3d8bbwe
-Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe
-Microsoft.YourPhone_8wekyb3d8bbwe
-Microsoft.ZuneVideo_8wekyb3d8bbwe
-Microsoft.Getstarted_8wekyb3d8bbwe
-Microsoft.GetHelp_8wekyb3d8bbwe
-Microsoft.BingWeather_8wekyb3d8bbwe
-Microsoft.MSPaint_8wekyb3d8bbwe
-Microsoft.Microsoft3DViewer_8wekyb3d8bbwe
-Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe
-Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe
-Microsoft.MixedReality.Portal_8wekyb3d8bbwe
-Microsoft.Office.OneNote_8wekyb3d8bbwe
-Microsoft.People_8wekyb3d8bbwe
-Microsoft.SkypeApp_kzf8qxf38zg5c
-Microsoft.WindowsAlarms_8wekyb3d8bbwe
-Microsoft.WindowsCamera_8wekyb3d8bbwe
-Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe
-Microsoft.WindowsMaps_8wekyb3d8bbwe
-Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe
-Microsoft.XboxApp_8wekyb3d8bbwe
-Microsoft.ZuneMusic_8wekyb3d8bbwe
-Microsoft.OneDrive
-microsoft.windowscommunicationsapps_8wekyb3d8bbwe
-Microsoft.Todos_8wekyb3d8bbwe
-ARP\Machine\X64\{16A15A77-242A-412C-86EF-C4D58BD80ED0}
-ARP\Machine\X64\{89581302-705F-42C5-99B0-E368A845DAD5}
-MSIX\A025C540.Yandex.Music_4.54.8517.0_x64__vfvw9svesycw6
-MSIX\AD2F1837.HPPrinterControl_154.2.1075.0_x64__v10z8vjag6ke6
-MSIX\Microsoft.StorePurchaseApp_22403.1401.1.0_x64__8wekyb3d8bbwe
+Microsoft.549981C3F5F10_8wekyb3d8bbwe                               # Cortana (голосовой ассистент)
+Microsoft.Wallet_8wekyb3d8bbwe                                      # Microsoft Кошелек (устаревшее)
+Microsoft.Xbox.TCUI_8wekyb3d8bbwe                                   # Xbox TCUI (интерфейс чата Xbox)
+Microsoft.XboxGameOverlay_8wekyb3d8bbwe                             # Xbox Game Overlay (оверлей в играх)
+Microsoft.XboxGamingOverlay_8wekyb3d8bbwe                           # Еще один оверлей Xbox
+Microsoft.XboxIdentityProvider_8wekyb3d8bbwe                        # Сервис авторизации Xbox
+Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe                     # Голосовой ввод в Xbox
+Microsoft.YourPhone_8wekyb3d8bbwe                                   # Связь с телефоном (Your Phone)
+Microsoft.ZuneVideo_8wekyb3d8bbwe                                   # Кино и ТВ (видеоплеер)
+Microsoft.Getstarted_8wekyb3d8bbwe                                  # Microsoft Первые шаги
+Microsoft.GetHelp_8wekyb3d8bbwe                                     # Встроенная справка
+Microsoft.BingWeather_8wekyb3d8bbwe                                 # Погода
+Microsoft.MSPaint_8wekyb3d8bbwe                                     # Новый Paint
+Microsoft.Microsoft3DViewer_8wekyb3d8bbwe                           # Просмотр 3D-моделей
+Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe                          # Office Hub (ярлык для офиса)
+Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe                        # Заметки
+Microsoft.MixedReality.Portal_8wekyb3d8bbwe                         # Портал смешанной реальности
+Microsoft.Office.OneNote_8wekyb3d8bbwe                              # OneNote
+Microsoft.People_8wekyb3d8bbwe                                      # Контакты
+Microsoft.SkypeApp_kzf8qxf38zg5c                                    # Встроенный Skype
+Microsoft.WindowsAlarms_8wekyb3d8bbwe                               # Будильники и часы
+Microsoft.WindowsCamera_8wekyb3d8bbwe                               # Камера
+Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe                          # Центр отзывов Windows
+Microsoft.WindowsMaps_8wekyb3d8bbwe                                 # Карты
+Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe                        # Диктофон
+Microsoft.XboxApp_8wekyb3d8bbwe                                     # Основное приложение Xbox
+Microsoft.ZuneMusic_8wekyb3d8bbwe                                   # Groove Music (устаревшее)
+Microsoft.OneDrive                                                  # OneDrive
+microsoft.windowscommunicationsapps_8wekyb3d8bbwe                   # Встроенная почта и календарь
+Microsoft.Todos_8wekyb3d8bbwe                                       # Microsoft To-Do (списки задач)
+MSIX\A025C540.Yandex.Music_4.54.8517.0_x64__vfvw9svesycw6           # Яндекс.Музыка
+MSIX\AD2F1837.HPPrinterControl_154.2.1075.0_x64__v10z8vjag6ke6      # HP Smart
+MSIX\Microsoft.StorePurchaseApp_22403.1401.1.0_x64__8wekyb3d8bbwe   # Microsoft Store Purchase

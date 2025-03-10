@@ -1,6 +1,10 @@
-Microsoft.WindowsTerminal
-Notepad++.Notepad++
-Apache.OpenOffice
-Mozilla.Firefox
-Microsoft.VisualStudioCode
-AnyDeskSoftwareGmbH.AnyDesk
+Microsoft.WindowsTerminal   # Терминал Windows
+Notepad++.Notepad++         # Блокнот++
+Mozilla.Firefox             # Браузер Firefox
+Microsoft.VisualStudioCode  # VS Code (редактор кода)
+AnyDeskSoftwareGmbH.AnyDesk # AnyDesk (удаленный доступ)
+7zip.7zip                   # 7-Zip (архиватор)
+Google.Chrome               # Браузер Chrome
+VLC.VLC                     # VLC (медиаплеер)
+WinSCP.WinSCP               # WinSCP (SFTP-клиент)
+Git.Git                     # Git (система контроля версий)
